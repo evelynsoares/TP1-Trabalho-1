@@ -1,4 +1,5 @@
 #include <iostream>
+#include "dominios.hpp"
 
 using namespace std;
 
