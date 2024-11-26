@@ -64,13 +64,40 @@ class Senha {
 
 inline Avaliacao::Avaliacao(u_int8_t nota){
     try{
-        if(validar(nota)){
+        if(validar(nota)){ // Verifica se a nota é valida. Sem sim, atualiza nota no objeto.
             this->nota = nota;
         } else {
             throw nota;
         }
     } catch (u_int8_t nota) {
-        cout << "Erro: Nota inválida. Valor entrado: " << nota << endl; 
+        cout << "Erro: Nota inválida. Valor entrado: " << nota << endl; // Apenas diz isso, criando um objeto vazio.
     }
 
+}
+
+inline Codigo::Codigo(string codigo){
+    try{
+        if(validar(codigo)){ // Verifica se valor é válido. Se sim, atualiza objeto.
+            this->codigo = codigo;
+        } else {
+            throw codigo;
+        }
+    } catch (string codigo) {
+        cout << "Erro: Código inválido. Valor entrado: " << codigo << endl; // Apenas diz isso, criando um objeto vazio.
+    }
+}
+
+inline Data::Data(u_int8_t DD, u_int8_t MM, u_int8_t AA){
+    try{
+        if(validar(DD, MM, AA)){ // Verifica se valor é válido. Se sim, atualiza objeto.
+            this->DD = DD;
+            this->MM = MM;
+            this->AA = AA;
+        } else {
+            string aux = to_string(DD) + "/" + to_string(MM) + "/" + to_string(AA);
+            throw aux;
+        }
+    } catch (string aux) {
+        cout << "Erro: Data inválida. Valor entrado: " << aux << endl; // Apenas diz isso, criando um objeto vazio.
+    }
 }
