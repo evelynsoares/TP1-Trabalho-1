@@ -26,3 +26,11 @@ bool Codigo::validar(string codigo){
     }
     return true;
 }
+
+bool Data::validar(u_int8_t DD, u_int8_t MM, u_int8_t AA){
+    if(DD < 1 || DD > 31 || MM > 12 || MM < 1 || (DD > 30 && ((MM%2 == 0 && MM < 8) || (MM%2 && MM > 7)))){
+        return false;
+    }
+    return true;
+}
+
