@@ -1,9 +1,6 @@
 #ifndef DOMINIOS_HPP
 #define DOMINIOS_HPP
 
-#include <string>
-#include <stdexcept>
-
 #include <bits/stdc++.h>
 
 using namespace std;
