@@ -76,12 +76,12 @@ bool Senha::validar(u_int senha) {
         return false;
     }
 
-    set<char> unique_digits;
+    set<char> dig_unicos;
     for (char c : senha_str) {
-        if (!isdigit(c) || unique_digits.count(c) > 0) {
+        if (!isdigit(c) || dig_unicos.count(c) > 0) {
             return false;
         }
-        unique_digits.insert(c);
+        dig_unicos.insert(c);
     }
 
     bool crescente = true, decrescente = true;
