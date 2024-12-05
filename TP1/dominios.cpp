@@ -1,7 +1,7 @@
 #include <dominios.hpp>
 #include <set>
 
-bool Avaliacao::validar(u_int8_t nota){
+bool Avaliacao::validar(uint8_t nota){
     if((nota < 0) || (nota > 5)){
         return false;
     }
@@ -28,7 +28,7 @@ bool Codigo::validar(string codigo){
     return true;
 }
 
-bool Data::validar(u_int8_t DD, u_int8_t MM, u_int8_t AA){
+bool Data::validar(uint8_t DD, uint8_t MM, uint8_t AA){
     if(DD < 1 || DD > 31 || MM > 12 || MM < 1 || (DD > 30 && ((MM%2 == 0 && MM < 8) || (MM%2 && MM > 7))) || (AA%4 == 0 && MM == 2 && DD > 29)){
         return false;
     }
@@ -42,14 +42,14 @@ bool Dinheiro::validar(double m){
     return true;
 }
 
-bool Duracao::validar(u_int16_t d){
+bool Duracao::validar(uint16_t d){
     if(d > 360 || d < 0){
         return false;
     }
     return true;
 }
 
-bool Horario::validar(u_int8_t HH, u_int8_t MM) {
+bool Horario::validar(uint8_t HH, uint8_t MM) {
     if (HH > 23 || MM > 59) {
         return false;
     }
@@ -69,7 +69,7 @@ bool Nome::validar(char* nome) {
     return true;
 }
 
-bool Senha::validar(u_int senha) {
+bool Senha::validar(unsigned int senha) {
     string senha_str = to_string(senha);
 
     if (senha_str.length() != 5) {

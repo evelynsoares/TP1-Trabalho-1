@@ -1,15 +1,17 @@
 #ifndef DOMINIOS_HPP
 #define DOMINIOS_HPP
 
-#include <bits/stdc++.h>
+#include <cstdint>
+#include <stdexcept>
+#include <cstring>
 
 using namespace std;
 
 class Avaliacao {
     public:
-        u_int8_t nota;
-        bool validar(u_int8_t);
-        Avaliacao(u_int8_t);
+        uint8_t nota;
+        bool validar(uint8_t);
+        Avaliacao(uint8_t);
 };
 
 class Codigo {
@@ -21,11 +23,11 @@ class Codigo {
 
 class Data {
     public:
-        u_int8_t DD;
-        u_int8_t MM;
-        u_int8_t AA;
-        bool validar(u_int8_t, u_int8_t, u_int8_t);
-        Data(u_int8_t,u_int8_t,u_int8_t);
+        uint8_t DD;
+        uint8_t MM;
+        uint8_t AA;
+        bool validar(uint8_t, uint8_t, uint8_t);
+        Data(uint8_t,uint8_t,uint8_t);
 
 };
 
@@ -38,17 +40,17 @@ class Dinheiro {
 
 class Duracao {
     public:
-        u_int16_t tempo;
-        bool validar(u_int16_t);
-        Duracao(u_int16_t);
+        uint16_t tempo;
+        bool validar(uint16_t);
+        Duracao(uint16_t);
 };
 
 class Horario {
     public:
-        u_int8_t HH;
-        u_int8_t MM;
-        bool validar(u_int8_t, u_int8_t);
-        Horario(u_int8_t, u_int8_t);
+        uint8_t HH;
+        uint8_t MM;
+        bool validar(uint8_t, uint8_t);
+        Horario(uint8_t, uint8_t);
 };
 
 class Nome {
@@ -60,19 +62,19 @@ class Nome {
 
 class Senha {
     public:
-        u_int senha;
-        bool validar(u_int);
-        Senha(u_int);
+        unsigned int senha;
+        bool validar(unsigned int);
+        Senha(unsigned int);
 };
 
-inline Avaliacao::Avaliacao(u_int8_t nota){
+inline Avaliacao::Avaliacao(uint8_t nota){
     try{
         if(validar(nota)){ // Verifica se a nota é valida. Sem sim, atualiza nota no objeto.
             this->nota = nota;
         } else {
             throw nota;
         }
-    } catch (u_int8_t nota) {
+    } catch (uint8_t nota) {
         cout << "Erro: Nota inválida. Valor entrado: " << nota << endl; // Apenas diz isso, criando um objeto vazio.
     }
 
@@ -90,7 +92,7 @@ inline Codigo::Codigo(string codigo){
     }
 }
 
-inline Data::Data(u_int8_t DD, u_int8_t MM, u_int8_t AA){
+inline Data::Data(uint8_t DD, uint8_t MM, uint8_t AA){
     try{
         if(validar(DD, MM, AA)){ // Verifica se valor é válido. Se sim, atualiza objeto.
             this->DD = DD;
@@ -105,7 +107,25 @@ inline Data::Data(u_int8_t DD, u_int8_t MM, u_int8_t AA){
     }
 }
 
-inline Horario::Horario(u_int8_t HH, u_int8_t MM) {
+inline Dinheiro::Dinheiro(double valor){
+    if (validar(valor)){
+        this->valor = valor;
+    }
+    else {
+        cout << "Erro: Valor de deinheiro inválido. Valor entrado: " << valor << endl;
+    }
+}
+
+inline Duracao::Duracao(uint16_t tempo){
+    if (validar(tempo)){
+        this->tempo = tempo;
+    }
+    else {
+        cout << "Erro: duração inválida. Valor entrado: " << tempo << endl;
+    }
+}
+
+inline Horario::Horario(uint8_t HH, uint8_t MM) {
     try {
         if (validar(HH, MM)) {
             this->HH = HH;
@@ -132,14 +152,14 @@ inline Nome::Nome(char* nome) {
     }
 }
 
-inline Senha::Senha(u_int senha) {
+inline Senha::Senha(unsigned int senha) {
     try {
         if (validar(senha)) {
             this->senha = senha;
         } else {
             throw senha;
         }
-    } catch (u_int senha) {
+    } catch (unsigned int senha) {
         cout << "Erro: Senha inválida. Valor entrado: " << senha << endl;
     }
 }
