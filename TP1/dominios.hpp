@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <stdexcept>
 #include <cstring>
+#include <iostream>
 
 using namespace std;
 
@@ -25,9 +26,9 @@ class Data {
     public:
         uint8_t DD;
         uint8_t MM;
-        uint8_t AA;
-        bool validar(uint8_t, uint8_t, uint8_t);
-        Data(uint8_t,uint8_t,uint8_t);
+        uint16_t AA;
+        bool validar(uint8_t, uint8_t, uint16_t);
+        Data(uint8_t,uint8_t,uint16_t);
 
 };
 
@@ -69,32 +70,32 @@ class Senha {
 
 inline Avaliacao::Avaliacao(uint8_t nota){
     try{
-        if(validar(nota)){ // Verifica se a nota é valida. Sem sim, atualiza nota no objeto.
+        if(validar(nota)){ 
             this->nota = nota;
         } else {
             throw nota;
         }
     } catch (uint8_t nota) {
-        cout << "Erro: Nota inválida. Valor entrado: " << nota << endl; // Apenas diz isso, criando um objeto vazio.
+        cout << "Erro: Nota invalida. Valor entrado: " << nota << endl; 
     }
 
 }
 
 inline Codigo::Codigo(string codigo){
     try{
-        if(validar(codigo)){ // Verifica se valor é válido. Se sim, atualiza objeto.
+        if(validar(codigo)){ 
             this->codigo = codigo;
         } else {
             throw codigo;
         }
     } catch (string codigo) {
-        cout << "Erro: Código inválido. Valor entrado: " << codigo << endl; // Apenas diz isso, criando um objeto vazio.
+        cout << "Erro: Código invalido. Valor entrado: " << codigo << endl; 
     }
 }
 
-inline Data::Data(uint8_t DD, uint8_t MM, uint8_t AA){
+inline Data::Data(uint8_t DD, uint8_t MM, uint16_t AA){
     try{
-        if(validar(DD, MM, AA)){ // Verifica se valor é válido. Se sim, atualiza objeto.
+        if(validar(DD, MM, AA)){ 
             this->DD = DD;
             this->MM = MM;
             this->AA = AA;
@@ -103,25 +104,34 @@ inline Data::Data(uint8_t DD, uint8_t MM, uint8_t AA){
             throw aux;
         }
     } catch (string aux) {
-        cout << "Erro: Data inválida. Valor entrado: " << aux << endl; // Apenas diz isso, criando um objeto vazio.
+        cout << "Erro: Data invalida. Valor entrado: " << aux << endl; 
     }
 }
 
 inline Dinheiro::Dinheiro(double valor){
-    if (validar(valor)){
-        this->valor = valor;
-    }
-    else {
-        cout << "Erro: Valor de deinheiro inválido. Valor entrado: " << valor << endl;
+    try {
+        if (validar(valor)){
+            this->valor = valor;
+        }
+        else {
+            throw valor;
+        }
+    } catch (double valor) {
+        cout << "Erro: Dinheiro invalido. Valor entrado: " << valor << endl;
     }
 }
 
 inline Duracao::Duracao(uint16_t tempo){
-    if (validar(tempo)){
-        this->tempo = tempo;
+    try {
+        if (validar(tempo)){
+            this->tempo = tempo;
+        }
+        else {
+            throw tempo;
+        }
     }
-    else {
-        cout << "Erro: duração inválida. Valor entrado: " << tempo << endl;
+    catch (uint16_t tempo){
+        cout << "Erro: Duracao invalida. Valor entrado: " << tempo << endl;
     }
 }
 
@@ -135,7 +145,7 @@ inline Horario::Horario(uint8_t HH, uint8_t MM) {
             throw aux;
         }
     } catch (string aux) {
-        cout << "Erro: Horário inválido. Valor entrado: " << aux << endl;
+        cout << "Erro: Horario invalido. Valor entrado: " << aux << endl;
     }
 }
 
@@ -148,7 +158,7 @@ inline Nome::Nome(char* nome) {
             throw string(nome);
         }
     } catch (string aux) {
-        cout << "Erro: Nome inválido. Valor entrado: " << aux << endl;
+        cout << "Erro: Nome invalido. Valor entrado: " << aux << endl;
     }
 }
 
@@ -160,7 +170,7 @@ inline Senha::Senha(unsigned int senha) {
             throw senha;
         }
     } catch (unsigned int senha) {
-        cout << "Erro: Senha inválida. Valor entrado: " << senha << endl;
+        cout << "Erro: Senha invalida. Valor entrado: " << senha << endl;
     }
 }
 

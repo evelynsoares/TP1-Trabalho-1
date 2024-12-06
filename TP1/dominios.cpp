@@ -1,4 +1,4 @@
-#include <dominios.hpp>
+#include "dominios.hpp"
 #include <set>
 
 bool Avaliacao::validar(uint8_t nota){
@@ -28,7 +28,7 @@ bool Codigo::validar(string codigo){
     return true;
 }
 
-bool Data::validar(uint8_t DD, uint8_t MM, uint8_t AA){
+bool Data::validar(uint8_t DD, uint8_t MM, uint16_t AA){
     if(DD < 1 || DD > 31 || MM > 12 || MM < 1 || (DD > 30 && ((MM%2 == 0 && MM < 8) || (MM%2 && MM > 7))) || (AA%4 == 0 && MM == 2 && DD > 29)){
         return false;
     }
@@ -71,6 +71,7 @@ bool Nome::validar(char* nome) {
 
 bool Senha::validar(unsigned int senha) {
     string senha_str = to_string(senha);
+    int counter_d = 1, counter_c = 1; //comecar no 1 para comparar com o digito anterior
 
     if (senha_str.length() != 5) {
         return false;
@@ -84,16 +85,15 @@ bool Senha::validar(unsigned int senha) {
         dig_unicos.insert(c);
     }
 
-    bool crescente = true, decrescente = true;
     for (size_t i = 1; i < senha_str.length(); ++i) {
-        if (senha_str[i] > senha_str[i - 1]) {
-            decrescente = false;
-        } else if (senha_str[i] < senha_str[i - 1]) {
-            crescente = false;
+        if (senha_str[i] < senha_str[i-1]) {
+            counter_d++;
+        } else if (senha_str[i] == senha_str[i+1]) {
+            counter_c++;
         }
     }
 
-    if (crescente || decrescente) {
+    if (counter_c == 5 || counter_d == 5) { //senha tem 5 digitos
         return false;
     }
 
