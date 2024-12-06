@@ -72,8 +72,10 @@ inline Avaliacao::Avaliacao(uint8_t nota){
     try{
         if(validar(nota)){ 
             this->nota = nota;
-        } else {
+        } else { // -------------------------------ERRO
+            printf("nota %d\n", nota);
             throw nota;
+            printf("nota %d\n", nota);
         }
     } catch (uint8_t nota) {
         cout << "Erro: Nota invalida. Valor entrado: " << nota << endl; 
@@ -89,7 +91,7 @@ inline Codigo::Codigo(string codigo){
             throw codigo;
         }
     } catch (string codigo) {
-        cout << "Erro: Código invalido. Valor entrado: " << codigo << endl; 
+        cout << "Erro: Codigo invalido. Valor entrado: " << codigo << endl; 
     }
 }
 

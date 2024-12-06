@@ -5,15 +5,15 @@
 using namespace std;
 // usuario deve criar uma conta
 // apos autenticado
-// viajante tem acesso ao criar, ler, atualizar, e excluir viagem; crud destino, crud atividade, crud, hospedagem
-//atualizacao de um registro nao possibila atuaLIZAR dado q identifi a o registtro PK
+// viajante tem acesso ao criar, ler, atualizar, e excluir viagem, crud destino, crud atividade, crud, hospedagem
+// atualizacao de um registro nao possibila atuaLIZAR dado q identifi a o registtro PK
 
 //consultar custo de viagem
 //listar viagesn asccoiadas ao viajante
 //listar destinos associados ao viagem
 //listar ativ acc ao destino
 //listar hspe acc ao destino
-//ao apresentar listyagem -> aprestnar codigo en jome de cada registro integrante da listagem
+//ao apresentar listagem -> aprestnar codigo en nome de cada registro integrante da listagem
 
 //nao pode ser excluido registro se existir trregistro acco a ele
 //data de ativ deeve estar no intervalo def pelas datas de iniioc e termino do dest accosiado
