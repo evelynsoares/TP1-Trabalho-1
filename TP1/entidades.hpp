@@ -14,7 +14,7 @@ private:
     Codigo codigo;
 
 public:
-    Conta(const Nome& nome, const Senha& senha, const Codigo& codigo) //par�metros por refer�ncia constante (const Nome&) evita c�pias desnecess�rias e protege os dados originais
+    Conta(const Nome& nome, const Senha& senha, const Codigo& codigo) //param por referencia constante (const Nome&) evita copias desnecessarias e protege os dados originais
         : nome(nome), senha(senha), codigo(codigo){} //nome, senha e codigo estao sendo inicializados diretamente com os valores recebidos como argumento
 
     Nome getNome() const { return nome; }
@@ -93,7 +93,7 @@ public:
     Nome getNome() const { return nome; }
     Data getDataDeInicio() const { return dataDeInicio; }
     Data getDataDeTermino() const { return dataDeTermino;}
-    Avaliacao getAvaliacao() const { return Avaliacao;}
+    Avaliacao getAvaliacao() const { return avaliacao;}
 
     void setCodigo( const Codigo& novoCodigo) { codigo = novoCodigo; }
     void setNome( const Nome& novoNome) { nome = novoNome; }
@@ -116,8 +116,8 @@ public:
 
     Codigo getCodigo() const { return codigo;}
     Nome getNome() const { return nome; }
-    Dinheiro getDiaria() const { return nome; }
-    Avaliacao getAvaliacao() const { return Avaliacao;}
+    Dinheiro getDiaria() const { return diaria; }
+    Avaliacao getAvaliacao() const { return avaliacao;}
 
     void setCodigo( const Codigo& novoCodigo) { codigo = novoCodigo; }
     void setNome( const Nome& novoNome) { nome = novoNome; }
