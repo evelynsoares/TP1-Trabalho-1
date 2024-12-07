@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1733519959 source:c:\users\victo\downloads\tp1-trabalho-1\tp1\main.cpp
+	<iostream>
+	"dominios.hpp"
+	"entidades.hpp"
+
+1733522275 c:\users\victo\downloads\tp1-trabalho-1\tp1\dominios.hpp
+	<cstdint>
+	<stdexcept>
+	<cstring>
+	<iostream>
+
+1733597736 c:\users\victo\downloads\tp1-trabalho-1\tp1\entidades.hpp
+	<string>
+	"dominios.hpp"
+
+1733522281 source:c:\users\victo\downloads\tp1-trabalho-1\tp1\dominios.cpp
+	"dominios.hpp"
+	<set>
+
+1733593416 source:c:\users\victo\downloads\tp1-trabalho-1\tp1\entidades.cpp
+	"entidades.hpp"
+

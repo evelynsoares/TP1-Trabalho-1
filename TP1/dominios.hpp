@@ -70,7 +70,7 @@ class Senha {
 
 inline Avaliacao::Avaliacao(uint8_t nota){
     try{
-        if(validar(nota)){ 
+        if(validar(nota)){
             this->nota = nota;
         } else { // -------------------------------ERRO
             printf("nota %d\n", nota);
@@ -78,26 +78,26 @@ inline Avaliacao::Avaliacao(uint8_t nota){
             printf("nota %d\n", nota);
         }
     } catch (uint8_t nota) {
-        cout << "Erro: Nota invalida. Valor entrado: " << nota << endl; 
+        cout << "Erro: Nota invalida. Valor entrado: " << nota << endl;
     }
 
 }
 
 inline Codigo::Codigo(string codigo){
     try{
-        if(validar(codigo)){ 
+        if(validar(codigo)){
             this->codigo = codigo;
         } else {
             throw codigo;
         }
     } catch (string codigo) {
-        cout << "Erro: Codigo invalido. Valor entrado: " << codigo << endl; 
+        cout << "Erro: Codigo invalido. Valor entrado: " << codigo << endl;
     }
 }
 
 inline Data::Data(uint8_t DD, uint8_t MM, uint16_t AA){
     try{
-        if(validar(DD, MM, AA)){ 
+        if(validar(DD, MM, AA)){
             this->DD = DD;
             this->MM = MM;
             this->AA = AA;
@@ -106,7 +106,7 @@ inline Data::Data(uint8_t DD, uint8_t MM, uint16_t AA){
             throw aux;
         }
     } catch (string aux) {
-        cout << "Erro: Data invalida. Valor entrado: " << aux << endl; 
+        cout << "Erro: Data invalida. Valor entrado: " << aux << endl;
     }
 }
 
