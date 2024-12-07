@@ -1,6 +1,7 @@
 #ifndef ENTIDADES_HPP_INCLUDED
 #define ENTIDADES_HPP_INCLUDED
 
+
 #include <string>
 #include "dominios.hpp"
 
@@ -13,7 +14,7 @@ private:
     Codigo codigo;
 
 public:
-    Conta(const Nome& nome, const Senha& senha, const Codigo& codigo) //parâmetros por referência constante (const Nome&) evita cópias desnecessárias e protege os dados originais
+    Conta(const Nome& nome, const Senha& senha, const Codigo& codigo) //parï¿½metros por referï¿½ncia constante (const Nome&) evita cï¿½pias desnecessï¿½rias e protege os dados originais
         : nome(nome), senha(senha), codigo(codigo){} //nome, senha e codigo estao sendo inicializados diretamente com os valores recebidos como argumento
 
     Nome getNome() const { return nome; }
