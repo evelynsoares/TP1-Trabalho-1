@@ -23,7 +23,7 @@ void testarDominios() {
         Senha senha(13579);
         cout << "Senha valida: " << senha.senha << endl;
 
-
+        //vao aparecer na execp em dominios.hpp
         Avaliacao a(50);
         Codigo c("AB123!");
         Data d(32, 8, 2024);
@@ -55,14 +55,54 @@ void testarEntidades() {
              << ", Senha: " << conta.getSenha().senha
              << ", Codigo: " << conta.getCodigo().codigo << endl;
 
+        Codigo codigoAtividade1("A03021");
+        Nome nomeAtividade1("Passeio Turistico");
+        Data dataAtividade1(23, 7, 2024);
+        Horario horarioAtividade1(9, 0);
+        Duracao duracaoAtividade1(50);
+        Dinheiro precoAtividade1(150.00);
+        Avaliacao avaliacaoAtividade1(4);
 
-        Codigo codigoViagem("V12345");
-        Nome nomeViagem("Viagem ao Rio");
-        Avaliacao avaliacaoViagem(5);
-        //CRUDViagem criarViagem(codigoViagem, nomeViagem, avaliacaoViagem);
+        Codigo codigoAtividade2("B04022");
+        Nome nomeAtividade2("Caminhada na Montanha");
+        Data dataAtividade2(25, 8, 2024);
+        Horario horarioAtividade2(14, 30);
+        Duracao duracaoAtividade2(120);
+        Dinheiro precoAtividade2(250.00);
+        Avaliacao avaliacaoAtividade2(5);
+
+        Gerenciador gerenciador;
+
+        gerenciador.criarAtividade(&codigoAtividade1, &nomeAtividade1, &dataAtividade1, &horarioAtividade1,
+                                   &duracaoAtividade1, &precoAtividade1, &avaliacaoAtividade1);
+        gerenciador.criarAtividade(&codigoAtividade2, &nomeAtividade2, &dataAtividade2, &horarioAtividade2,
+                                   &duracaoAtividade2, &precoAtividade2, &avaliacaoAtividade2);
+
+        cout << "Atividades cadastradas:" << endl;
+        gerenciador.listarAtividades();
+        //Atualizacao na atividade 2
+        Nome novoNome("Passeio na Praia");
+        Data novaData(25, 12, 2024);
+        Horario novoHorario(15, 40);
+        Duracao novaDuracao(60);
+        Dinheiro novoPreco(200.00);
+        Avaliacao novaAvaliacao(5);
+
+        gerenciador.atualizarAtividade(&codigoAtividade2, &novoNome, &novaData, &novoHorario,
+                                       &novaDuracao, &novoPreco, &novaAvaliacao);
+
+        cout << "Atividades apos a atualizacao:" << endl;
+        gerenciador.listarAtividades();
+
+        // excluindo atividade1
+        gerenciador.excluirAtividade(&codigoAtividade1);
+
+        cout << "Atividades apos a exclusao:" << endl;
+        gerenciador.listarAtividades();
+
 
     } catch (...) {
-        cout << "Erro desconhecido durante a criacao de entidades." << endl;
+        cout << "Erro durante a validacao de entidades." << endl;
     }
 }
 

@@ -49,7 +49,7 @@ class Atividade {
 private:
     Codigo*codigo;
     Nome* nome;
-    Data * data;
+    Data* data;
     Horario* horario;
     Duracao* duracao;
     Dinheiro* preco;
@@ -74,7 +74,6 @@ public:
     void setDuracao(const Duracao& novaDuracao) { *duracao = novaDuracao; }
     void setPreco(const Dinheiro& novoPreco) { *preco = novoPreco; }
     void setAvaliacao(const Avaliacao& novaAvaliacao)  { *avaliacao = novaAvaliacao; }
-
 };
 
 class Destino {
@@ -110,7 +109,7 @@ private:
     Avaliacao* avaliacao;
 
 public:
-    Hospedagem(Nome* nome, Codigo* codigo, Dinheiro* dinheiro, Avaliacao* avaliacao){
+    Hospedagem(Nome* nome, Codigo* codigo, Dinheiro* diaria, Avaliacao* avaliacao){
         this->nome = nome; this->codigo = codigo; this->diaria = diaria; this->avaliacao = avaliacao;}
 
     Codigo getCodigo() const { return *codigo;}
@@ -126,14 +125,17 @@ public:
 };
 
 
-class CRUDHospedagem {
+class Gerenciador {
 private:
-    vector<Hospedagem> hospedagem;
+    vector<Viagem*> viagens;
+    vector<Atividade*> atividades;
+    vector<Destino*> destinos;
+    vector<Hospedagem*> hospedagens;
 public:
-    void criarHospedagem(Codigo* codigo, Nome* nome, Dinheiro* diaria, Avaliacao* avaliacao);
-    void listarHospedagem();
-    void atualizarHospedagem(Codigo novoCodigo, Nome novoNome, Dinheiro novaDiaria, Avaliacao novaAvaliacao);
-    void excluirHospedagem(Codigo codigo); //talvez vai ser necessario mudar isso
+    void criarAtividade(Codigo* codigo, Nome* nome, Data* data, Horario* horario, Duracao* duracao, Dinheiro* preco, Avaliacao* avaliacao);
+    void listarAtividades();
+    void atualizarAtividade(Codigo* novoCodigo, Nome* novoNome, Data* novaData, Horario* novoHorario, Duracao* novaDuracao, Dinheiro* novoPreco, Avaliacao* novaAvaliacao);
+    void excluirAtividade(Codigo* codigo);
 };
 
 
