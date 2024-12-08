@@ -81,49 +81,49 @@ public:
 
 class Destino {
 private:
-    Codigo codigo;
-    Nome nome;
-    Data dataDeInicio;
-    Data dataDeTermino;
-    Avaliacao avaliacao;
+    Codigo* codigo;
+    Nome* nome;
+    Data* dataDeInicio;
+    Data* dataDeTermino;
+    Avaliacao* avaliacao;
 public:
-    Destino(const Codigo& codigo, const Nome& nome, const Data& dataDeInicio, const Data& dataDeTermino, const Avaliacao& avaliacao)
-        : codigo(codigo), nome(nome), dataDeInicio(dataDeInicio), dataDeTermino(dataDeTermino), avaliacao(avaliacao) {}
+    Destino(Codigo* codigo, Nome* nome, Data* dataDeInicio, Data* dataDeTermino, Avaliacao* avaliacao){
+        this->codigo = codigo; this->nome = nome; this->dataDeInicio = dataDeInicio; this->dataDeTermino = dataDeTermino; this->avaliacao = avaliacao;}
 
-    Codigo getCodigo() const { return codigo;}
-    Nome getNome() const { return nome; }
-    Data getDataDeInicio() const { return dataDeInicio; }
-    Data getDataDeTermino() const { return dataDeTermino;}
-    Avaliacao getAvaliacao() const { return avaliacao;}
+    Codigo getCodigo() const { return *codigo;}
+    Nome getNome() const { return *nome; }
+    Data getDataDeInicio() const { return *dataDeInicio; }
+    Data getDataDeTermino() const { return *dataDeTermino;}
+    Avaliacao getAvaliacao() const { return *avaliacao;}
 
-    void setCodigo( const Codigo& novoCodigo) { codigo = novoCodigo; }
-    void setNome( const Nome& novoNome) { nome = novoNome; }
-    void setDataDeInicio( const Data& novaDataDeInicio) { dataDeInicio = novaDataDeInicio;}
-    void setDataDeTermino( const Data& novaDataDeTermino) { dataDeTermino = dataDeTermino;}
-    void setAvaliacao ( const Avaliacao& novaAvaliacao ) { avaliacao = novaAvaliacao;}
+    void setCodigo( const Codigo& novoCodigo) { *codigo = novoCodigo; }
+    void setNome( const Nome& novoNome) { *nome = novoNome; }
+    void setDataDeInicio( const Data& novaDataDeInicio) { *dataDeInicio = novaDataDeInicio;}
+    void setDataDeTermino( const Data& novaDataDeTermino) { *dataDeTermino = novaDataDeTermino;}
+    void setAvaliacao ( const Avaliacao& novaAvaliacao ) { *avaliacao = novaAvaliacao;}
 
 };
 
 class Hospedagem {
 private:
-    Codigo codigo;
-    Nome nome;
-    Dinheiro diaria;
-    Avaliacao avaliacao;
+    Codigo* codigo;
+    Nome* nome;
+    Dinheiro* diaria;
+    Avaliacao* avaliacao;
 
 public:
-    Hospedagem(const Codigo& codigo, const Nome& nome, const Dinheiro& diaria, Avaliacao& avaliacao)
-        : codigo(codigo), nome(nome), diaria(diaria), avaliacao(avaliacao) {}
+    Hospedagem(Nome* nome, Codigo* codigo, Dinheiro* dinheiro, Avaliacao* avaliacao){
+        this->nome = nome; this->codigo = codigo; this->diaria = diaria; this->avaliacao = avaliacao;}
 
-    Codigo getCodigo() const { return codigo;}
-    Nome getNome() const { return nome; }
-    Dinheiro getDiaria() const { return diaria; }
-    Avaliacao getAvaliacao() const { return avaliacao;}
+    Codigo getCodigo() const { return *codigo;}
+    Nome getNome() const { return *nome; }
+    Dinheiro getDiaria() const { return *diaria; }
+    Avaliacao getAvaliacao() const { return *avaliacao;}
 
-    void setCodigo( const Codigo& novoCodigo) { codigo = novoCodigo; }
-    void setNome( const Nome& novoNome) { nome = novoNome; }
-    void setDiaria( const Dinheiro& novaDiaria) { diaria = novaDiaria; }
-    void setAvaliacao( const Avaliacao& novaAvaliacao) { avaliacao = novaAvaliacao; }
+    void setCodigo( const Codigo& novoCodigo) { *codigo = novoCodigo; }
+    void setNome( const Nome& novoNome) { *nome = novoNome; }
+    void setDiaria( const Dinheiro& novaDiaria) { *diaria = novaDiaria; }
+    void setAvaliacao( const Avaliacao& novaAvaliacao) { *avaliacao = novaAvaliacao; }
 
 };
 
