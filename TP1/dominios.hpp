@@ -4,100 +4,73 @@
 #include <bits/stdc++.h>
 
 using namespace std;
- /*
- class Avaliacao {
-    public:
-        uint8_t nota;
-        bool validar(uint8_t);
-        Avaliacao(uint8_t);
-};
- */
+
 class Avaliacao {
-    public:
-        int nota; // mudanca pra int
-        bool validar(int);
-        Avaliacao(int);
+public:
+    int nota;
+    bool validar(int);
+    Avaliacao(int);
 };
 
 class Codigo {
-    public:
-        string codigo;
-        bool validar(string);
-        Codigo(string);
+public:
+    string codigo;
+    bool validar(string);
+    Codigo(string);
 };
-/* dando erro ao criar entidades
-class Data {
-    public:
-        uint8_t DD;
-        uint8_t MM;
-        uint16_t AA;
-        bool validar(uint8_t, uint8_t, uint16_t);
-        Data(uint8_t,uint8_t,uint16_t);
-};
-*/
 
 class Data {
-    public:
-        int DD, MM, AA;
-        bool validar(int, int, int);
-        Data(int d, int m, int a);
+public:
+    int DD, MM, AA;
+    bool validar(int, int, int);
+    Data(int d, int m, int a);
 };
 
 class Dinheiro {
-    public:
-        double valor;
-        bool validar(double);
-        Dinheiro(double);
+public:
+    double valor;
+    bool validar(double);
+    Dinheiro(double);
 };
 
 class Duracao {
-    public:
-        uint16_t tempo;
-        bool validar(uint16_t);
-        Duracao(uint16_t);
+public:
+    int tempo;
+    bool validar(int);
+    Duracao(int);
 };
-/*
-//tava dando erro ao criar uma entidade
-class Horario {
-    public:
-        uint8_t HH;
-        uint8_t MM;
-        bool validar(uint8_t, uint8_t);
-        Horario(uint8_t, uint8_t);
-};*/
 
-class Horario { // mudanca pra int
-    public:
-        int HH, MM;
-        bool validar(int, int);
-        Horario(int h, int m);
+class Horario {
+public:
+    int HH, MM;
+    bool validar(int, int);
+    Horario(int h, int m);
 };
 
 class Nome {
-    public:
-        char nome[30];
-        bool validar(char *);
-        Nome(char *);
+public:
+    char nome[30];
+    bool validar(char *);
+    Nome(char *);
 };
 
 class Senha {
-    public:
-        unsigned int senha;
-        bool validar(unsigned int);
-        Senha(unsigned int);
+public:
+    unsigned int senha;
+    bool validar(unsigned int);
+    Senha(unsigned int);
 };
-//inline Avaliacao::Avaliacao(uint8_t nota){
-inline Avaliacao::Avaliacao(int nota){ // mudanca pra int
+
+inline Avaliacao::Avaliacao(int nota){
     try{
         if(validar(nota)){
             this->nota = nota;
         } else {
             throw nota;
         }
-    } catch (int nota) { // mudancao pra int
+    } catch (int nota) {
         cout << "Erro: Nota invalida. Valor entrado: " << nota << endl;
     }
-
 }
 
 inline Codigo::Codigo(string codigo){
@@ -111,23 +84,7 @@ inline Codigo::Codigo(string codigo){
         cout << "Erro: Codigo invalido. Valor entrado: " << codigo << endl;
     }
 }
-/*
-inline Data::Data(uint8_t DD, uint8_t MM, uint16_t AA){
-    try{
-        if(validar(DD, MM, AA)){
-            this->DD = DD;
-            this->MM = MM;
-            this->AA = AA;
-        } else {
-            string aux = to_string(DD) + "/" + to_string(MM) + "/" + to_string(AA);
-            throw aux;
-        }
-    } catch (string aux) {
-        cout << "Erro: Data invalida. Valor entrado: " << aux << endl;
-    }
-}*/
 
-// mudanca pra int
 inline Data::Data(int DD, int MM, int AA){
     try{
         if(validar(DD, MM, AA)){
@@ -135,7 +92,7 @@ inline Data::Data(int DD, int MM, int AA){
             this->MM = MM;
             this->AA = AA;
         } else {
-            string aux = to_string(DD) + "/" + to_string(MM) + "/" + to_string(AA);
+            string aux = to_string(DD) + "-" + to_string(MM) + "-" + to_string(AA);
             throw aux;
         }
     } catch (string aux) {
@@ -156,8 +113,9 @@ inline Dinheiro::Dinheiro(double valor){
         cout << "Erro: Dinheiro invalido. Valor entrado: " << valor << endl;
     }
 }
+
 // 170102785
-inline Duracao::Duracao(uint16_t tempo){
+inline Duracao::Duracao(int tempo){
     try {
         if (validar(tempo)){
             this->tempo = tempo;
@@ -166,13 +124,11 @@ inline Duracao::Duracao(uint16_t tempo){
             throw tempo;
         }
     }
-    catch (uint16_t tempo){
+    catch (int tempo){
         cout << "Erro: Duracao invalida. Valor entrado: " << tempo << endl;
     }
 }
 
-//alteracao aqui tambem
-//inline Horario::Horario(uint8_t HH, uint8_t MM) {
 inline Horario::Horario(int HH, int MM) {
     try {
         if (validar(HH, MM)) {
@@ -211,5 +167,4 @@ inline Senha::Senha(unsigned int senha) {
         cout << "Erro: Senha invalida. Valor entrado: " << senha << endl;
     }
 }
-
 #endif // DOMINIOS_HPP_INCLUDED
