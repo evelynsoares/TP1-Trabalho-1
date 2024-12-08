@@ -2,6 +2,7 @@
 #define ENTIDADES_HPP_INCLUDED
 
 #include "dominios.hpp"
+#include <vector>
 
 using namespace std;
 
@@ -12,7 +13,8 @@ private:
     Codigo* codigo;
 
 public:
-    Conta(Nome* nome, Senha* senha, Codigo* codigo){this->nome = nome;this->senha = senha;this->codigo = codigo;}
+    Conta(Nome* nome, Senha* senha, Codigo* codigo){
+        this->nome = nome;this->senha = senha;this->codigo = codigo;}
 
     Nome getNome() const { return *nome; }
     Senha getSenha() const { return *senha; }
@@ -122,5 +124,17 @@ public:
     void setAvaliacao( const Avaliacao& novaAvaliacao) { *avaliacao = novaAvaliacao; }
 
 };
+
+
+class CRUDHospedagem {
+private:
+    vector<Hospedagem> hospedagem;
+public:
+    void criarHospedagem(Codigo* codigo, Nome* nome, Dinheiro* diaria, Avaliacao* avaliacao);
+    void listarHospedagem();
+    void atualizarHospedagem(Codigo novoCodigo, Nome novoNome, Dinheiro novaDiaria, Avaliacao novaAvaliacao);
+    void excluirHospedagem(Codigo codigo); //talvez vai ser necessario mudar isso
+};
+
 
 #endif // ENTIDADES_HPP_INCLUDED

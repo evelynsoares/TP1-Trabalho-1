@@ -46,7 +46,6 @@ void testarDominios() {
 
 void testarEntidades() {
     try {
-        // Criando dados para os testes
         Nome nomeConta("Maria Clara");
         Senha senhaConta(54367);
         Codigo codigoConta("C12345");
@@ -56,55 +55,11 @@ void testarEntidades() {
              << ", Senha: " << conta.getSenha().senha
              << ", Codigo: " << conta.getCodigo().codigo << endl;
 
+
         Codigo codigoViagem("V12345");
         Nome nomeViagem("Viagem ao Rio");
         Avaliacao avaliacaoViagem(5);
-        Viagem viagem(codigoViagem, nomeViagem, avaliacaoViagem);
-
-        cout << "Viagem criada: Codigo: " << viagem.getCodigo().codigo
-             << ", Nome: " << viagem.getNome().nome
-             << ", Avaliacao: " << static_cast<int>(viagem.getAvaliacao().nota) << endl;
-
-        Codigo codigoAtividade("AT9876");
-        Nome nomeAtividade("Passeio de barco");
-        Data dataAtividade(20, 8, 2024);
-        Horario horarioAtividade(10, 0);
-        Duracao duracaoAtividade(180);
-        Dinheiro precoAtividade(250.50);
-        Avaliacao avaliacaoAtividade(4);
-        Atividade atividade(codigoAtividade, nomeAtividade, dataAtividade, horarioAtividade, duracaoAtividade, precoAtividade, avaliacaoAtividade);
-
-        cout << "Atividade criada: Codigo: " << atividade.getCodigo().codigo
-             << ", Nome: " << atividade.getNome().nome
-             << ", Data: " << (int)atividade.getData().DD << "/" << (int)atividade.getData().MM << "/" << (int)atividade.getData().AA
-             << ", Horario: " << (int)atividade.getHorario().HH << ":" << (int)atividade.getHorario().MM
-             << ", Duracao: " << atividade.getDuracao().tempo << " minutos"
-             << ", Preco: R$ " << atividade.getPreco().valor
-             << ", Avaliacao: " << static_cast<int>(atividade.getAvaliacao().nota) << endl;
-
-        Codigo codigoDestino("D45678");
-        Nome nomeDestino("Sao Paulo");
-        Data dataInicioDestino(15, 8, 2024);
-        Data dataTerminoDestino(20, 8, 2024);
-        Avaliacao avaliacaoDestino(4);
-        Destino destino(codigoDestino, nomeDestino, dataInicioDestino, dataTerminoDestino, avaliacaoDestino);
-
-        cout << "Destino criado: Codigo: " << destino.getCodigo().codigo
-             << ", Nome: " << destino.getNome().nome
-             << ", Data Inicio: " << (int)destino.getDataDeInicio().DD << "/" << (int)destino.getDataDeInicio().MM << "/" << (int)destino.getDataDeInicio().AA
-             << ", Data Termino: " << (int)destino.getDataDeTermino().DD << "/" << (int)destino.getDataDeTermino().MM << "/" << (int)destino.getDataDeTermino().AA
-             << ", Avaliacao: " << static_cast<int>(destino.getAvaliacao().nota) << endl;
-
-        Codigo codigoHospedagem("H32145");
-        Nome nomeHospedagem("Hotel Paradise");
-        Dinheiro diariaHospedagem(300.00);
-        Avaliacao avaliacaoHospedagem(5);
-        Hospedagem hospedagem(codigoHospedagem, nomeHospedagem, diariaHospedagem, avaliacaoHospedagem);
-
-        cout << "Hospedagem criada: Codigo: " << hospedagem.getCodigo().codigo
-             << ", Nome: " << hospedagem.getNome().nome
-             << ", Diaria: R$ " << hospedagem.getDiaria().valor
-             << ", Avaliacao: " << static_cast<int>(hospedagem.getAvaliacao().nota) << endl;
+        //CRUDViagem criarViagem(codigoViagem, nomeViagem, avaliacaoViagem);
 
     } catch (...) {
         cout << "Erro desconhecido durante a criacao de entidades." << endl;
