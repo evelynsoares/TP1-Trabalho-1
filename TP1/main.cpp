@@ -56,53 +56,6 @@ void testarEntidades() {
              << ", Senha: " << conta.getSenha().senha
              << ", Codigo: " << conta.getCodigo().codigo << endl;
 
-        // testes pra criar, atualizar, listar, apagar
-        Gerenciador gerenciador;
-        
-        //ATIVIDADES
-        Codigo codigoAtividade1("A03021");
-        Nome nomeAtividade1("Passeio Turistico");
-        Data dataAtividade1(23, 7, 2024);
-        Horario horarioAtividade1(9, 0);
-        Duracao duracaoAtividade1(50);
-        Dinheiro precoAtividade1(150.00);
-        Avaliacao avaliacaoAtividade1(4);
-
-        Codigo codigoAtividade2("B04022");
-        Nome nomeAtividade2("Caminhada na Montanha");
-        Data dataAtividade2(25, 8, 2024);
-        Horario horarioAtividade2(14, 30);
-        Duracao duracaoAtividade2(120);
-        Dinheiro precoAtividade2(250.00);
-        Avaliacao avaliacaoAtividade2(5);
-
-        gerenciador.criarAtividade(&codigoAtividade1, &nomeAtividade1, &dataAtividade1, &horarioAtividade1,
-                                   &duracaoAtividade1, &precoAtividade1, &avaliacaoAtividade1);
-        gerenciador.criarAtividade(&codigoAtividade2, &nomeAtividade2, &dataAtividade2, &horarioAtividade2,
-                                   &duracaoAtividade2, &precoAtividade2, &avaliacaoAtividade2);
-
-        cout << "Atividades cadastradas:" << endl;
-        gerenciador.listarAtividades();
-        //Atualizacao na atividade 2
-        Nome novoNome("Passeio na Praia");
-        Data novaData(25, 12, 2024);
-        Horario novoHorario(15, 40);
-        Duracao novaDuracao(60);
-        Dinheiro novoPreco(200.00);
-        Avaliacao novaAvaliacao(5);
-
-        gerenciador.atualizarAtividade(&codigoAtividade2, &novoNome, &novaData, &novoHorario,
-                                       &novaDuracao, &novoPreco, &novaAvaliacao);
-
-        cout << "Atividades apos a atualizacao:" << endl;
-        gerenciador.listarAtividades();
-
-        // excluindo atividade1
-        gerenciador.excluirAtividade(&codigoAtividade1);
-
-        cout << "Atividades apos a exclusao:" << endl;
-        gerenciador.listarAtividades();
-
 
     } catch (...) {
         cout << "Erro durante a validacao de entidades." << endl;

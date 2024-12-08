@@ -1,8 +1,7 @@
 #include "dominios.hpp"
 #include <set>
 
-//bool Avaliacao::validar(uint8_t nota){
-bool Avaliacao::validar(int nota){// mudanca pra int
+bool Avaliacao::validar(int nota){
     if(nota < 0 || nota > 5){
         return false;
     }
@@ -11,7 +10,6 @@ bool Avaliacao::validar(int nota){// mudanca pra int
 
 bool Codigo::validar(string codigo){
     string valid = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"; // Characteres válidos.
-    // != 6 ao inves de > 6
     if(codigo.length() != 6 ){
         return false;
     }
@@ -29,7 +27,7 @@ bool Codigo::validar(string codigo){
     }
     return true;
 }
-// mudancao no tipo ->  bool Data::validar(uint8_t DD, uint8_t MM, uint16_t AA){
+
 bool Data::validar(int DD, int MM, int AA){
     if(DD < 1 || DD > 31 || MM > 12 || MM < 1 || (DD > 30 && ((MM%2 == 0 && MM < 8) || (MM%2 && MM > 7))) || (AA%4 == 0 && MM == 2 && DD > 29)){
         return false;
@@ -44,13 +42,13 @@ bool Dinheiro::validar(double m){
     return true;
 }
 
-bool Duracao::validar(uint16_t d){
+bool Duracao::validar(int d){
     if(d > 360 || d < 0){
         return false;
     }
     return true;
 }
-// bool Horario::validar(uint8_t HH, uint8_t MM) {
+
 bool Horario::validar(int HH, int MM) {
     if (HH > 23 || MM > 59) {
         return false;
@@ -79,14 +77,14 @@ bool Senha::validar(unsigned int senha) {
         return false;
     }
 
-    set<char> dig_unicos;
+    set<char> dig_unicos; //checa se todos os digitos sao unicos
     for (char c : senha_str) {
         if (!isdigit(c) || dig_unicos.count(c) > 0) {
             return false;
         }
         dig_unicos.insert(c);
     }
-
+    //checa se a senha esta crescendo ou decrescendo
     for (size_t i = 1; i < senha_str.length(); ++i) {
         if (senha_str[i] < senha_str[i-1]) {
             counter_d++;
@@ -95,9 +93,8 @@ bool Senha::validar(unsigned int senha) {
         }
     }
 
-    if (counter_c == 5 || counter_d == 5) { //senha tem 5 digitos
+    if (counter_c == 5 || counter_d == 5) {
         return false;
     }
-
     return true;
 }

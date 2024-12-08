@@ -2,7 +2,6 @@
 #define ENTIDADES_HPP_INCLUDED
 
 #include "dominios.hpp"
-#include <vector>
 
 using namespace std;
 
@@ -122,21 +121,6 @@ public:
     void setNome( const Nome& novoNome) { *nome = novoNome; }
     void setDiaria( const Dinheiro& novaDiaria) { *diaria = novaDiaria; }
     void setAvaliacao( const Avaliacao& novaAvaliacao) { *avaliacao = novaAvaliacao; }
-
-};
-
-// 170102785 e
-class Gerenciador {
-private:
-    vector<Viagem*> viagens;
-    vector<Atividade*> atividades;
-    vector<Destino*> destinos;
-    vector<Hospedagem*> hospedagens;
-public:
-    void criarAtividade(Codigo* codigo, Nome* nome, Data* data, Horario* horario, Duracao* duracao, Dinheiro* preco, Avaliacao* avaliacao);
-    void listarAtividades();
-    void atualizarAtividade(Codigo* novoCodigo, Nome* novoNome, Data* novaData, Horario* novoHorario, Duracao* novaDuracao, Dinheiro* novoPreco, Avaliacao* novaAvaliacao);
-    void excluirAtividade(Codigo* codigo);
 
 };
 
