@@ -3,3 +3,8 @@ TP1 Pedro/TP1 Pedro.layout
 TP1/TP1.layout
 TP1/TP1.cbp
 
+TP1/bin/Debug/TP1.exe
+TP1/obj/Debug/dominios.o
+TP1/obj/Debug/entidades.o
+TP1/obj/Debug/main.o
+TP1/TP1.depend
