@@ -1,8 +1,8 @@
 #include "dominios.hpp"
 #include <set>
-
-bool Avaliacao::validar(uint8_t nota){
-    if((nota < 0) || (nota > 5)){
+//bool Avaliacao::validar(uint8_t nota){
+bool Avaliacao::validar(int nota){// mudanca pra int
+    if(nota < 0 || nota > 5){
         return false;
     }
     return true;
@@ -27,8 +27,8 @@ bool Codigo::validar(string codigo){
     }
     return true;
 }
-
-bool Data::validar(uint8_t DD, uint8_t MM, uint16_t AA){
+// mudancao no tipo ->  bool Data::validar(uint8_t DD, uint8_t MM, uint16_t AA){
+bool Data::validar(int DD, int MM, int AA){
     if(DD < 1 || DD > 31 || MM > 12 || MM < 1 || (DD > 30 && ((MM%2 == 0 && MM < 8) || (MM%2 && MM > 7))) || (AA%4 == 0 && MM == 2 && DD > 29)){
         return false;
     }
@@ -48,8 +48,8 @@ bool Duracao::validar(uint16_t d){
     }
     return true;
 }
-
-bool Horario::validar(uint8_t HH, uint8_t MM) {
+// bool Horario::validar(uint8_t HH, uint8_t MM) {
+bool Horario::validar(int HH, int MM) {
     if (HH > 23 || MM > 59) {
         return false;
     }
