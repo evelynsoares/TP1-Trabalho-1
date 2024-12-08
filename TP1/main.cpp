@@ -59,7 +59,7 @@ void testarEntidades() {
         Codigo codigoViagem("V12345");
         Nome nomeViagem("Viagem ao Rio");
         Avaliacao avaliacaoViagem(5);
-        Viagem viagem(codigoViagem, nomeViagem, avaliacaoViagem);
+        Viagem viagem(&codigoViagem, &nomeViagem, &avaliacaoViagem);
 
         cout << "Viagem criada: Codigo: " << viagem.getCodigo().codigo
              << ", Nome: " << viagem.getNome().nome
@@ -72,7 +72,7 @@ void testarEntidades() {
         Duracao duracaoAtividade(180);
         Dinheiro precoAtividade(250.50);
         Avaliacao avaliacaoAtividade(4);
-        Atividade atividade(codigoAtividade, nomeAtividade, dataAtividade, horarioAtividade, duracaoAtividade, precoAtividade, avaliacaoAtividade);
+        Atividade atividade(&codigoAtividade, &nomeAtividade, &dataAtividade, &horarioAtividade, &duracaoAtividade, &precoAtividade, &avaliacaoAtividade);
 
         cout << "Atividade criada: Codigo: " << atividade.getCodigo().codigo
              << ", Nome: " << atividade.getNome().nome
