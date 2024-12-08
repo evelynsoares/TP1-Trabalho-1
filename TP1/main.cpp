@@ -11,17 +11,17 @@ void testarDominios() {
         Codigo codigo("AB1234");
         cout << "Codigo valido: " << codigo.codigo << endl;
         Data data(15, 8, 2024);
-        cout << "Data valida: " << (int)data.DD << "/" << (int)data.MM << "/" << (int)data.AA << endl; 
+        cout << "Data valida: " << (int)data.DD << "/" << (int)data.MM << "/" << (int)data.AA << endl;
         Dinheiro dinheiro(150000.50); //erro?
         cout << "Dinheiro valido: R$ " << dinheiro.valor << endl;
         Duracao duracao(120);
         cout << "Duracao valida: " << duracao.tempo << " minutos" << endl;
         Horario horario(14, 30);
-        cout << "Horario valido: " << (int)horario.HH << ":" << (int)horario.MM << endl; 
+        cout << "Horario valido: " << (int)horario.HH << ":" << (int)horario.MM << endl;
         Nome nome("Joao Silva");
         cout << "Nome valido: " << nome.nome << endl;
         Senha senha(13579);
-        cout << "Senha valida: " << senha.senha << endl; 
+        cout << "Senha valida: " << senha.senha << endl;
 
 
         Avaliacao a(50);
@@ -34,10 +34,10 @@ void testarDominios() {
         Nome no("X ae A-12");
         Senha sen(34567);
         Senha senhaConta0(54321); //senhas invalidas
-        Senha senhaConta1(01234);  
-        Senha senhaConta2(76543); 
-        Senha senhaConta3(11111); 
-        Senha senhaConta4(324244); 
+        Senha senhaConta1(01234);
+        Senha senhaConta2(76543);
+        Senha senhaConta3(11111);
+        Senha senhaConta4(324244);
 
     } catch (...) {
         cout << "Erro durante a validacao de dominios." << endl;
@@ -50,7 +50,7 @@ void testarEntidades() {
         Nome nomeConta("Maria Clara");
         Senha senhaConta(54367);
         Codigo codigoConta("C12345");
-        Conta conta(nomeConta, senhaConta, codigoConta);
+        Conta conta(&nomeConta, &senhaConta, &codigoConta);
 
         cout << "Conta criada: Nome: " << conta.getNome().nome
              << ", Senha: " << conta.getSenha().senha

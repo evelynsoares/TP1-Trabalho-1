@@ -2,28 +2,29 @@
 #define ENTIDADES_HPP_INCLUDED
 
 
-#include <string>
+//#include <string>
 #include "dominios.hpp"
 
 using namespace std;
 
 class Conta {
 private:
-    Nome nome;
-    Senha senha;
-    Codigo codigo;
+    Nome* nome;
+    Senha* senha;
+    Codigo* codigo;
 
 public:
-    Conta(const Nome& nome, const Senha& senha, const Codigo& codigo) //param por referencia constante (const Nome&) evita copias desnecessarias e protege os dados originais
-        : nome(nome), senha(senha), codigo(codigo){} //nome, senha e codigo estao sendo inicializados diretamente com os valores recebidos como argumento
+//    Conta(Nome& nome, Senha& senha, Codigo& codigo) //param por referencia constante (const Nome&) evita copias desnecessarias e protege os dados originais
+//        : nome(nome), senha(senha), codigo(codigo){} //nome, senha e codigo estao sendo inicializados diretamente com os valores recebidos como argumento
+    Conta(Nome* nome, Senha* senha, Codigo* codigo){this->nome = nome;this->senha = senha;this->codigo = codigo;}
 
-    Nome getNome() const { return nome; }
-    Senha getSenha() const { return senha; }
-    Codigo getCodigo() const { return codigo;}
+    Nome getNome() const { return *nome; }
+    Senha getSenha() const { return *senha; }
+    Codigo getCodigo() const { return *codigo;}
 
-    void setNome(const Nome& novoNome) { nome = novoNome; }
-    void setSenha(const Senha& novaSenha) { senha = novaSenha; }
-    void setCodigo(const Codigo& novoCodigo) { codigo = novoCodigo;}
+    void setNome(const Nome& novoNome) { *nome = novoNome; }
+    void setSenha(const Senha& novaSenha) { *senha = novaSenha; }
+    void setCodigo(const Codigo& novoCodigo) { *codigo = novoCodigo;}
 };
 
 class Viagem {
