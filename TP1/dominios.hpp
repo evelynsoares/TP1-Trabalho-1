@@ -19,7 +19,6 @@ class Avaliacao {
         Avaliacao(int);
 };
 
-
 class Codigo {
     public:
         string codigo;
@@ -38,10 +37,10 @@ class Data {
 */
 
 class Data {
-public:
-    int DD, MM, AA;
-    bool validar(int, int, int);
-    Data(int d, int m, int a);
+    public:
+        int DD, MM, AA;
+        bool validar(int, int, int);
+        Data(int d, int m, int a);
 };
 
 class Dinheiro {
@@ -144,6 +143,7 @@ inline Data::Data(int DD, int MM, int AA){
     }
 }
 
+// 170102785
 inline Dinheiro::Dinheiro(double valor){
     try {
         if (validar(valor)){
@@ -156,7 +156,7 @@ inline Dinheiro::Dinheiro(double valor){
         cout << "Erro: Dinheiro invalido. Valor entrado: " << valor << endl;
     }
 }
-
+// 170102785
 inline Duracao::Duracao(uint16_t tempo){
     try {
         if (validar(tempo)){
@@ -170,6 +170,7 @@ inline Duracao::Duracao(uint16_t tempo){
         cout << "Erro: Duracao invalida. Valor entrado: " << tempo << endl;
     }
 }
+
 //alteracao aqui tambem
 //inline Horario::Horario(uint8_t HH, uint8_t MM) {
 inline Horario::Horario(int HH, int MM) {

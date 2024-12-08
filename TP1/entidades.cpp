@@ -2,7 +2,7 @@
 
 using namespace std;
 
-//CRUD pra atividades
+// 170102785
 void Gerenciador::criarAtividade(Codigo* codigo, Nome* nome, Data* data, Horario* horario, Duracao* duracao, Dinheiro* preco, Avaliacao* avaliacao) {
     Atividade* novaAtividade = new Atividade(codigo, nome, data, horario, duracao, preco, avaliacao);
     atividades.push_back(novaAtividade);
@@ -44,4 +44,3 @@ void Gerenciador::excluirAtividade(Codigo* codigo) {
         }
     }
 }
-

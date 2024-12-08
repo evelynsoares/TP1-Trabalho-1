@@ -6,6 +6,7 @@
 
 using namespace std;
 
+// 170102785
 class Conta {
 private:
     Nome* nome;
@@ -124,7 +125,7 @@ public:
 
 };
 
-
+// 170102785 e
 class Gerenciador {
 private:
     vector<Viagem*> viagens;
@@ -136,7 +137,7 @@ public:
     void listarAtividades();
     void atualizarAtividade(Codigo* novoCodigo, Nome* novoNome, Data* novaData, Horario* novoHorario, Duracao* novaDuracao, Dinheiro* novoPreco, Avaliacao* novaAvaliacao);
     void excluirAtividade(Codigo* codigo);
-};
 
+};
 
 #endif // ENTIDADES_HPP_INCLUDED
