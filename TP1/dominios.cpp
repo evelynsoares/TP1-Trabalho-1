@@ -1,5 +1,6 @@
 #include "dominios.hpp"
 #include <set>
+
 //bool Avaliacao::validar(uint8_t nota){
 bool Avaliacao::validar(int nota){// mudanca pra int
     if(nota < 0 || nota > 5){
@@ -10,7 +11,8 @@ bool Avaliacao::validar(int nota){// mudanca pra int
 
 bool Codigo::validar(string codigo){
     string valid = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"; // Characteres válidos.
-    if(codigo.length() > 6){
+    // != 6 ao inves de > 6
+    if(codigo.length() != 6 ){
         return false;
     }
     for(int i = 0; i < codigo.length(); i++){
