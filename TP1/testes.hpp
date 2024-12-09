@@ -9,7 +9,7 @@ using namespace std;
 
 class TUCodigo {
     private:
-        const  string VALOR_VALIDO =  "AZB301" ;
+        const  string VALOR_VALIDO =  "Az�301" ;
         const  string VALOR_INVALIDO = "1234567";
         const  string VALOR_INVALIDO2 = "ab";
         const  string VALOR_INVALIDO3 = "!567)";
@@ -52,8 +52,8 @@ class TUData {
         const  int VALOR_INVALIDO3[3] = {29, 2, 2023};
         Data *data;
         int estado;
-        void setUp();
-        void tearDown();
+
+
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:
@@ -72,6 +72,7 @@ class TUDinheiro {
         int estado;
         void setUp();
         void tearDown();
+
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:
@@ -88,6 +89,7 @@ class TUDuracao {
         int estado;
         void setUp();
         void tearDown();
+
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:
@@ -105,6 +107,7 @@ class TUHorario {
         int estado;
         void setUp();
         void tearDown();
+
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:
@@ -121,6 +124,7 @@ class TUNome {
         int estado;
         void setUp();
         void tearDown();
+
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:
@@ -140,6 +144,7 @@ class TUSenha {
         int estado;
         void setUp();
         void tearDown();
+
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:

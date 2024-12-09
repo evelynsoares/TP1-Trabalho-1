@@ -65,22 +65,6 @@ void testarEntidades() {
 
 
 int main() {
-    TUAvaliacao testeAvaliacao;
-    TUCodigo testeCodigo;
-
-    switch(testeAvaliacao.run()){
-        case TUAvaliacao::SUCESSO : cout << "SUCESSO" << endl;
-        break;
-        case TUAvaliacao::FALHA : cout << "FALHA" << endl;
-        break;
-    };
-
-    switch(testeCodigo.run()){
-        case TUCodigo::SUCESSO : cout << "SUCESSO" << endl;
-        break;
-        case TUCodigo::FALHA : cout << "FALHA" << endl;
-        break;
-    };
 
     testarDominios();
     testarEntidades();
