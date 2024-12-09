@@ -2,7 +2,6 @@
 #define ENTIDADES_HPP_INCLUDED
 
 #include "dominios.hpp"
-
 using namespace std;
 
 ///
