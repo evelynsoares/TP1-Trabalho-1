@@ -2,7 +2,6 @@
 #define DOMINIOS_HPP_INCLUDED
 
 #include <bits/stdc++.h>
-
 using namespace std;
 
 ///

@@ -1,7 +1,6 @@
 #include "dominios.hpp"
 #include <set>
 
-
 bool Avaliacao::validar(int nota){
     if(nota < 0 || nota > 5){
         return false;
