@@ -5,7 +5,14 @@
 
 using namespace std;
 
-// 170102785
+///
+///  A Classe Conta refere-se a conta de um possível usuário
+/// Ela possui Nome, Senha e Código
+/// @see Nome
+/// @see Senha
+/// @see Codigo
+/// @author 170102785
+/// 
 class Conta {
 private:
     Nome* nome;
@@ -28,6 +35,13 @@ public:
     void setCodigo(const Codigo& novoCodigo) { *codigo = novoCodigo;}
 };
 
+///
+/// A classe viagem refere-se a viagens dentro do sistema
+/// ela possui código, nome e avaliação
+/// @see Codigo
+/// @see Nome
+/// @see Avaliacao
+///
 class Viagem {
 private:
     Codigo* codigo;
@@ -51,6 +65,16 @@ public:
 
 };
 
+///
+/// Classe Atividade refere-se a atividades no sistema
+/// possui Codigo, nome, data, horario, duração, preço(Dinheiro) e avaliação
+/// @see Codigo
+/// @see Nome
+/// @see Dinheiro
+/// @see Duracao
+/// @see Horario
+/// @see Avaliacao
+///
 class Atividade {
 private:
     Codigo*codigo;
@@ -89,6 +113,14 @@ public:
     void setAvaliacao(const Avaliacao& novaAvaliacao)  { *avaliacao = novaAvaliacao; }
 };
 
+///
+/// Destino refere-se a destinos dentro do sistema
+/// possui Codigo, Nome, duas datas (Inicio e termino) e avaliação
+/// @see Codigo
+/// @see Nome
+/// @see Data
+/// @see Avaliacao
+///
 class Destino {
 private:
     Codigo* codigo;
@@ -119,10 +151,21 @@ public:
 
 };
 
+///
+/// Hospedagem refere-se a uma hospedagem no sistema
+/// possui código, nome, diaria (Dinheiro) e avaliação
+/// @see Codigo
+/// @see Nome
+/// @see Dinheiro
+/// @see Avaliacao
+///
 class Hospedagem {
 private:
     Codigo* codigo;
     Nome* nome;
+///
+/// @param diaria @see Dinheiro
+///
     Dinheiro* diaria;
     Avaliacao* avaliacao;
 
