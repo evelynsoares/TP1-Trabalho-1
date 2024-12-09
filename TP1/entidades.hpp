@@ -5,7 +5,14 @@
 
 using namespace std;
 
-// 170102785
+///
+///  A Classe Conta refere-se a conta de um possível usuário
+/// Ela possui Nome, Senha e Código
+/// @see Nome
+/// @see Senha
+/// @see Codigo
+/// @author 170102785
+/// 
 class Conta {
 private:
     Nome* nome;
@@ -25,6 +32,10 @@ public:
     void setCodigo(const Codigo& novoCodigo) { *codigo = novoCodigo;}
 };
 
+///
+/// A classe viagem refere-se a viagens dentro do sistema
+/// ela possui código, nome e avaliação
+///
 class Viagem {
 private:
     Codigo* codigo;
@@ -45,6 +56,9 @@ public:
 
 };
 
+///
+///
+///
 class Atividade {
 private:
     Codigo*codigo;
@@ -76,6 +90,9 @@ public:
     void setAvaliacao(const Avaliacao& novaAvaliacao)  { *avaliacao = novaAvaliacao; }
 };
 
+///
+/// Destino refere-se
+///
 class Destino {
 private:
     Codigo* codigo;
@@ -101,6 +118,9 @@ public:
 
 };
 
+///
+///
+///
 class Hospedagem {
 private:
     Codigo* codigo;
