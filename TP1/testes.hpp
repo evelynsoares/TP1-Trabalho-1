@@ -14,6 +14,7 @@ class TUCodigo {
         const  string VALOR_INVALIDO2 = "ab";
         const  string VALOR_INVALIDO3 = "!567)";
         int estado;
+        Codigo *codigo; 
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:
@@ -30,6 +31,7 @@ class TUAvaliacao {
         const static int VALOR_INVALIDO2 = 6;
         const static int VALOR_INVALIDO3 = 1000;
         int estado;
+        Avaliacao *avaliacao; 
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:
