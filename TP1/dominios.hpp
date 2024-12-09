@@ -1,8 +1,7 @@
-#ifndef DOMINIOS_HPP
-#define DOMINIOS_HPP
+#ifndef DOMINIOS_HPP_INCLUDED
+#define DOMINIOS_HPP_INCLUDED
 
 #include <bits/stdc++.h>
-
 using namespace std;
 
 ///
@@ -14,9 +13,11 @@ public:
 /// @param nota digito 0,1,2,3,4 ou 5
 ///
     int nota;
+    Avaliacao(int n);
     bool validar(int);
-    Avaliacao(int);
-    Avaliacao(){};
+
+    void setNota(int n);
+    int getNota();
 };
 
 ///
@@ -33,7 +34,9 @@ public:
 ///
     bool validar(string);
     Codigo(string);
-    Codigo(){};
+
+    void setCodigo(string c);
+    string getCodigo();
 };
 
 ///
@@ -49,7 +52,9 @@ public:
     int DD, MM, AA;
     bool validar(int, int, int);
     Data(int d, int m, int a);
-    Data(){};
+
+    void setData(int d, int m, int a);
+    Data getData(int &d, int &m, int &a);
 };
 
 ///
@@ -63,7 +68,9 @@ public:
     double valor;
     bool validar(double);
     Dinheiro(double);
-    Dinheiro(){};
+
+    void setValor(double v);
+    double getValor();
 };
 
 ///
@@ -77,6 +84,9 @@ public:
     int tempo;
     bool validar(int);
     Duracao(int);
+
+    void setDuracao(int t);
+    int getDuracao();
 };
 
 ///
@@ -91,6 +101,10 @@ public:
     int HH, MM;
     bool validar(int, int);
     Horario(int h, int m);
+
+    void setHora(int h);
+    void setMinuto(int m);
+    Horario getHorario(int &h, int &m);
 };
 
 ///
@@ -104,6 +118,9 @@ public:
     char nome[30];
     bool validar(char *);
     Nome(char *);
+
+    void setNome(char *n);
+    string getNome(char *n);
 };
 
 ///
@@ -117,112 +134,9 @@ public:
     unsigned int senha;
     bool validar(unsigned int);
     Senha(unsigned int);
+
+    void setSenha(unsigned int s);
+    unsigned int getSenha();
 };
 
-inline Avaliacao::Avaliacao(int nota){
-    try{
-        if(validar(nota)){
-            this->nota = nota;
-        } else {
-            throw nota;
-        }
-    } catch (int nota) {
-        cout << "Erro: Nota invalida. Valor entrado: " << nota << endl;
-    }
-}
-
-inline Codigo::Codigo(string codigo){
-    try{
-        if(validar(codigo)){
-            this->codigo = codigo;
-        } else {
-            throw codigo;
-        }
-    } catch (string codigo) {
-        cout << "Erro: Codigo invalido. Valor entrado: " << codigo << endl;
-    }
-}
-
-inline Data::Data(int DD, int MM, int AA){
-    try{
-        if(validar(DD, MM, AA)){
-            this->DD = DD;
-            this->MM = MM;
-            this->AA = AA;
-        } else {
-            string aux = to_string(DD) + "-" + to_string(MM) + "-" + to_string(AA);
-            throw aux;
-        }
-    } catch (string aux) {
-        cout << "Erro: Data invalida. Valor entrado: " << aux << endl;
-    }
-}
-
-// 170102785
-inline Dinheiro::Dinheiro(double valor){
-    try {
-        if (validar(valor)){
-            this->valor = valor;
-        }
-        else {
-            throw valor;
-        }
-    } catch (double valor) {
-        cout << "Erro: Dinheiro invalido. Valor entrado: " << valor << endl;
-    }
-}
-
-// 170102785
-inline Duracao::Duracao(int tempo){
-    try {
-        if (validar(tempo)){
-            this->tempo = tempo;
-        }
-        else {
-            throw tempo;
-        }
-    }
-    catch (int tempo){
-        cout << "Erro: Duracao invalida. Valor entrado: " << tempo << endl;
-    }
-}
-
-inline Horario::Horario(int HH, int MM) {
-    try {
-        if (validar(HH, MM)) {
-            this->HH = HH;
-            this->MM = MM;
-        } else {
-            string aux = to_string(HH) + ":" + to_string(MM);
-            throw aux;
-        }
-    } catch (string aux) {
-        cout << "Erro: Horario invalido. Valor entrado: " << aux << endl;
-    }
-}
-
-inline Nome::Nome(char* nome) {
-    try {
-        if (validar(nome)) {
-            strncpy(this->nome, nome, 30);
-            this->nome[29] = '\0';
-        } else {
-            throw string(nome);
-        }
-    } catch (string aux) {
-        cout << "Erro: Nome invalido. Valor entrado: " << aux << endl;
-    }
-}
-
-inline Senha::Senha(unsigned int senha) {
-    try {
-        if (validar(senha)) {
-            this->senha = senha;
-        } else {
-            throw senha;
-        }
-    } catch (unsigned int senha) {
-        cout << "Erro: Senha invalida. Valor entrado: " << senha << endl;
-    }
-}
 #endif // DOMINIOS_HPP_INCLUDED
