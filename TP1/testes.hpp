@@ -9,14 +9,11 @@ using namespace std;
 
 class TUCodigo {
     private:
-        const static string VALOR_VALIDO =  "Az«301" ;
-        const static string VALOR_INVALIDO = "1234567";
-        const static string VALOR_INVALIDO2 = "ab";
-        const static string VALOR_INVALIDO3 = "!567)";
-        Codigo *codigo;
+        const  string VALOR_VALIDO =  "Az«301" ;
+        const  string VALOR_INVALIDO = "1234567";
+        const  string VALOR_INVALIDO2 = "ab";
+        const  string VALOR_INVALIDO3 = "!567)";
         int estado;
-        void setUp();
-        void tearDown();
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:
@@ -32,10 +29,7 @@ class TUAvaliacao {
         const static int VALOR_INVALIDO = -1;
         const static int VALOR_INVALIDO2 = 6;
         const static int VALOR_INVALIDO3 = 1000;
-        Avaliacao *avaliacao;
         int estado;
-        void setUp();
-        void tearDown();
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:
@@ -46,10 +40,10 @@ class TUAvaliacao {
 
 class TUData {
     private:
-        const static int VALOR_VALIDO[3] =  {29, 2, 2024} ;
-        const static int VALOR_INVALIDO[3] = {31, 4, 2020};
-        const static int VALOR_INVALIDO2[3] = {29, 2, 1900};
-        const static int VALOR_INVALIDO3[3] = {29, 2, 2023};
+        const  int VALOR_VALIDO[3] =  {29, 2, 2024} ;
+        const  int VALOR_INVALIDO[3] = {31, 4, 2020};
+        const  int VALOR_INVALIDO2[3] = {29, 2, 1900};
+        const  int VALOR_INVALIDO3[3] = {29, 2, 2023};
         Data *data;
         int estado;
         void setUp();
@@ -65,9 +59,9 @@ class TUData {
 
 class TUDinheiro {
     private:
-        const static double VALOR_VALIDO = 1000.55;
-        const static double VALOR_INVALIDO = 200001;
-        const static double VALOR_INVALIDO2 = -55.;
+        const  double VALOR_VALIDO = 1000.55;
+        const  double VALOR_INVALIDO = 200001;
+        const  double VALOR_INVALIDO2 = -55.;
         Dinheiro *dinheiro;
         int estado;
         void setUp();
@@ -99,8 +93,8 @@ class TUDuracao {
 
 class TUHorario {
     private:
-        const static int VALOR_VALIDO[2] = {22, 32};
-        const static int VALOR_INVALIDO[2] = {24, 00};
+        const  int VALOR_VALIDO[2] = {22, 32};
+        const  int VALOR_INVALIDO[2] = {24, 00};
         Horario *horario;
         int estado;
         void setUp();
@@ -115,8 +109,8 @@ class TUHorario {
 
 class TUNome {
     private:
-        const static char VALOR_VALIDO[30] = "nao sei o que escrever";
-        const static char VALOR_INVALIDO[30] = "1234567890123456789012345678901";
+        const  char VALOR_VALIDO[30] = "nao sei o que escrever";
+        const  char VALOR_INVALIDO[30] = "12345678901234";
         Nome *nome;
         int estado;
         void setUp();

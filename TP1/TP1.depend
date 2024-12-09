@@ -62,3 +62,26 @@
 	"dominios.hpp"
 	"entidades.hpp"
 
+1733702005 source:c:\users\victo\downloads\tp1-trabalho-1\evelyn\tp1\dominios.cpp
+	"dominios.hpp"
+	<set>
+
+1733708066 c:\users\victo\downloads\tp1-trabalho-1\evelyn\tp1\dominios.hpp
+	<bits/stdc++.h>
+
+1733704739 source:c:\users\victo\downloads\tp1-trabalho-1\evelyn\tp1\main.cpp
+	<iostream>
+	"testes.hpp"
+	"dominios.hpp"
+	"entidades.hpp"
+
+1733708870 c:\users\victo\downloads\tp1-trabalho-1\evelyn\tp1\testes.hpp
+	<stdexcept>
+	"dominios.hpp"
+
+1733708907 c:\users\victo\downloads\tp1-trabalho-1\evelyn\tp1\entidades.hpp
+	"dominios.hpp"
+
+1733706635 source:c:\users\victo\downloads\tp1-trabalho-1\evelyn\tp1\testes.cpp
+	"testes.hpp"
+

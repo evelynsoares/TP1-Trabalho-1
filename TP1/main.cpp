@@ -1,4 +1,5 @@
 #include <iostream>
+#include "testes.hpp"
 #include "dominios.hpp"
 #include "entidades.hpp"
 
@@ -64,6 +65,14 @@ void testarEntidades() {
 
 
 int main() {
+    TUAvaliacao testeAvaliacao;
+    switch(testeAvaliacao.run()){
+        case TUCodigo::SUCESSO : cout << "SUCESSO" << endl;
+        break;
+        case TUCodigo::FALHA : cout << "FALHA" << endl;
+        break;
+    };
+
     cout << "=== Testando Dominios ===" << endl;
     testarDominios();
 

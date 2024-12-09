@@ -16,6 +16,7 @@ public:
     int nota;
     bool validar(int);
     Avaliacao(int);
+    Avaliacao(){};
 };
 
 ///
@@ -32,6 +33,7 @@ public:
 ///
     bool validar(string);
     Codigo(string);
+    Codigo(){};
 };
 
 ///
@@ -47,6 +49,7 @@ public:
     int DD, MM, AA;
     bool validar(int, int, int);
     Data(int d, int m, int a);
+    Data(){};
 };
 
 ///
@@ -60,6 +63,7 @@ public:
     double valor;
     bool validar(double);
     Dinheiro(double);
+    Dinheiro(){};
 };
 
 ///
