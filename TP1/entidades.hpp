@@ -14,7 +14,10 @@ private:
 
 public:
     Conta(Nome* nome, Senha* senha, Codigo* codigo){
-        this->nome = nome;this->senha = senha;this->codigo = codigo;}
+        this->nome = nome;
+        this->senha = senha;
+        this->codigo = codigo;
+    }
 
     Nome getNome() const { return *nome; }
     Senha getSenha() const { return *senha; }
@@ -33,7 +36,10 @@ private:
 
 public:
     Viagem(Codigo* codigo, Nome* nome, Avaliacao* avaliacao){
-        this->codigo = codigo; this->nome = nome; this->avaliacao=avaliacao;}
+        this->codigo = codigo;
+        this->nome = nome;
+        this->avaliacao=avaliacao;
+    }
 
     Codigo getCodigo() const { return *codigo;}
     Nome getNome() const { return *nome; }
@@ -57,7 +63,14 @@ private:
 
 public:
     Atividade(Codigo* codigo, Nome* nome, Data* data, Horario* horario, Duracao* duracao, Dinheiro* preco, Avaliacao* avaliacao){
-        this->codigo = codigo; this->nome = nome; this->data = data; this->horario = horario; this->duracao = duracao; this->preco = preco; this->avaliacao = avaliacao;}
+        this->codigo = codigo;
+        this->nome = nome;
+        this->data = data;
+        this->horario = horario;
+        this->duracao = duracao;
+        this->preco = preco;
+        this->avaliacao = avaliacao;
+    }
 
     Codigo getCodigo() const { return *codigo;}
     Nome getNome() const { return *nome; }
@@ -85,7 +98,12 @@ private:
     Avaliacao* avaliacao;
 public:
     Destino(Codigo* codigo, Nome* nome, Data* dataDeInicio, Data* dataDeTermino, Avaliacao* avaliacao){
-        this->codigo = codigo; this->nome = nome; this->dataDeInicio = dataDeInicio; this->dataDeTermino = dataDeTermino; this->avaliacao = avaliacao;}
+        this->codigo = codigo;
+        this->nome = nome;
+        this->dataDeInicio = dataDeInicio;
+        this->dataDeTermino = dataDeTermino;
+        this->avaliacao = avaliacao;
+    }
 
     Codigo getCodigo() const { return *codigo;}
     Nome getNome() const { return *nome; }
@@ -110,7 +128,11 @@ private:
 
 public:
     Hospedagem(Nome* nome, Codigo* codigo, Dinheiro* diaria, Avaliacao* avaliacao){
-        this->nome = nome; this->codigo = codigo; this->diaria = diaria; this->avaliacao = avaliacao;}
+        this->nome = nome;
+        this->codigo = codigo;
+        this->diaria = diaria;
+        this->avaliacao = avaliacao;
+    }
 
     Codigo getCodigo() const { return *codigo;}
     Nome getNome() const { return *nome; }

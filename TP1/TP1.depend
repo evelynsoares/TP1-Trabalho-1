@@ -43,22 +43,29 @@
 	"dominios.hpp"
 	<set>
 
-1733684299 source:c:\users\evelyn soares\documents\codes\tp1-trabalho-1\tp1\dominios.cpp
+1733707935 source:c:\users\evelyn soares\documents\codes\tp1-trabalho-1\tp1\dominios.cpp
 	"dominios.hpp"
 	<set>
 
-1733685801 c:\users\evelyn soares\documents\codes\tp1-trabalho-1\tp1\dominios.hpp
+1733707736 c:\users\evelyn soares\documents\codes\tp1-trabalho-1\tp1\dominios.hpp
 	<bits/stdc++.h>
 
 1733683157 source:c:\users\evelyn soares\documents\codes\tp1-trabalho-1\tp1\entidades.cpp
 	"entidades.hpp"
 
-1733684300 c:\users\evelyn soares\documents\codes\tp1-trabalho-1\tp1\entidades.hpp
+1733703413 c:\users\evelyn soares\documents\codes\tp1-trabalho-1\tp1\entidades.hpp
 	"dominios.hpp"
-	<vector>
 
-1733665988 source:c:\users\evelyn soares\documents\codes\tp1-trabalho-1\tp1\main.cpp
+1733708075 source:c:\users\evelyn soares\documents\codes\tp1-trabalho-1\tp1\main.cpp
 	<iostream>
 	"dominios.hpp"
 	"entidades.hpp"
+	"testes.hpp"
+
+1733708147 c:\users\evelyn soares\documents\codes\tp1-trabalho-1\tp1\testes.hpp
+	<stdexcept>
+	"dominios.hpp"
+
+1733708012 source:c:\users\evelyn soares\documents\codes\tp1-trabalho-1\tp1\testes.cpp
+	"testes.hpp"
 

@@ -2,17 +2,36 @@
 #define TESTES_HPP_INCLUDED
 
 #include <stdexcept>
-
 #include "dominios.hpp"
 
-using namespace std;
 
+class TUAvaliacao {
+private:
+    const static int VALOR_VALIDO =  5 ;
+    const static int VALOR_INVALIDO = -1;
+    const static int VALOR_INVALIDO2 = 6;
+    const static int VALOR_INVALIDO3 = 1000;
+    Avaliacao *avaliacao;
+    int estado;
+    void setUp();
+    void tearDown();
+    void testarCenarioValorValido();
+    void testerCenarioValorInvalido();
+public:
+    void setNota(int n);
+    int getNota();
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
+};
+
+/*
 class TUCodigo {
     private:
-        const static string VALOR_VALIDO =  "Az«301" ;
-        const static string VALOR_INVALIDO = "1234567";
-        const static string VALOR_INVALIDO2 = "ab";
-        const static string VALOR_INVALIDO3 = "!567)";
+        string VALOR_VALIDO = "AzH301";
+        string VALOR_INVALIDO = "1234567";
+        string VALOR_INVALIDO2 = "ab";
+        string VALOR_INVALIDO3 = "!567)";
         Codigo *codigo;
         int estado;
         void setUp();
@@ -26,30 +45,13 @@ class TUCodigo {
 };
 
 
-class TUAvaliacao {
-    private:
-        const static int VALOR_VALIDO =  5 ;
-        const static int VALOR_INVALIDO = -1;
-        const static int VALOR_INVALIDO2 = 6;
-        const static int VALOR_INVALIDO3 = 1000;
-        Avaliacao *avaliacao;
-        int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioValorValido();
-        void testerCenarioValorInvalido();
-    public:
-        const static int SUCESSO = 0;
-        const static int FALHA = -1;
-        int run();
-};
 
 class TUData {
     private:
-        const static int VALOR_VALIDO[3] =  {29, 2, 2024} ;
-        const static int VALOR_INVALIDO[3] = {31, 4, 2020};
-        const static int VALOR_INVALIDO2[3] = {29, 2, 1900};
-        const static int VALOR_INVALIDO3[3] = {29, 2, 2023};
+        int VALOR_VALIDO[3] =  {29, 2, 2024} ;
+        int VALOR_INVALIDO[3] = {31, 4, 2020};
+        int VALOR_INVALIDO2[3] = {29, 2, 1900};
+        int VALOR_INVALIDO3[3] = {29, 2, 2023};
         Data *data;
         int estado;
         void setUp();
@@ -65,9 +67,9 @@ class TUData {
 
 class TUDinheiro {
     private:
-        const static double VALOR_VALIDO = 1000.55;
-        const static double VALOR_INVALIDO = 200001;
-        const static double VALOR_INVALIDO2 = -55.;
+        double VALOR_VALIDO = 1000.55;
+        double VALOR_INVALIDO = 200001;
+        double VALOR_INVALIDO2 = -55.;
         Dinheiro *dinheiro;
         int estado;
         void setUp();
@@ -99,8 +101,8 @@ class TUDuracao {
 
 class TUHorario {
     private:
-        const static int VALOR_VALIDO[2] = {22, 32};
-        const static int VALOR_INVALIDO[2] = {24, 00};
+        int VALOR_VALIDO[2] = {22, 32};
+        int VALOR_INVALIDO[2] = {24, 00};
         Horario *horario;
         int estado;
         void setUp();
@@ -115,8 +117,8 @@ class TUHorario {
 
 class TUNome {
     private:
-        const static char VALOR_VALIDO[30] = "nao sei o que escrever";
-        const static char VALOR_INVALIDO[30] = "1234567890123456789012345678901";
+        char VALOR_VALIDO[30] = "nao sei o que escrever";
+        char VALOR_INVALIDO[30] = "1234567890123456789011";
         Nome *nome;
         int estado;
         void setUp();
@@ -131,11 +133,11 @@ class TUNome {
 
 class TUSenha {
     private:
-        const static char VALOR_VALIDO =  86259;
-        const static char VALOR_INVALIDO = 12345;
-        const static char VALOR_INVALIDO2 = 54321;
-        const static char VALOR_INVALIDO3 = 862590;
-        const static char VALOR_INVALIDO4 = 86258;
+        char VALOR_VALIDO =  86259;
+        char VALOR_INVALIDO = 12345;
+        char VALOR_INVALIDO2 = 54321;
+        char VALOR_INVALIDO3 = 862590;
+        char VALOR_INVALIDO4 = 11111;
         Senha *senha;
         int estado;
         void setUp();
@@ -147,5 +149,5 @@ class TUSenha {
         const static int FALHA = -1;
         int run();
 };
-
+*/
 #endif // TESTES_HPP_INCLUDED

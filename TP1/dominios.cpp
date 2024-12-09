@@ -1,6 +1,7 @@
 #include "dominios.hpp"
 #include <set>
 
+
 bool Avaliacao::validar(int nota){
     if(nota < 0 || nota > 5){
         return false;
@@ -15,7 +16,7 @@ bool Codigo::validar(string codigo){
     }
     for(int i = 0; i < codigo.length(); i++){
         bool flag = false;
-        for(int j = 0; j < valid.length(); j++){ // Eu sei que é O(n^2), mas isso roda no máximo 6*63 vezes no total (codigo.length() <= 6).
+        for(int j = 0; j < valid.length(); j++){ // isso roda no máximo 6*63 vezes no total (codigo.length() = 6).
             if(codigo[i] == valid[j]){
                 flag = true;
                 break;
@@ -98,3 +99,207 @@ bool Senha::validar(unsigned int senha) {
     }
     return true;
 }
+
+//170102785
+Avaliacao::Avaliacao(int n) {
+    try {
+        if (validar(n)) {
+            this->nota = n;
+        } else {
+            throw invalid_argument("Nota invalida");
+        }
+    } catch (int nota){
+        cout << "Erro: Nota invalida. Valor entrado: " << nota << endl;
+    }
+}
+
+void Avaliacao::setNota(int n) {
+    if (validar(n)) {
+        nota = n;
+    } else {
+        throw invalid_argument("Nota invalida");
+    }
+}
+
+int Avaliacao::getNota() {
+    return nota;
+}
+
+void Codigo::setCodigo(string c) {
+    if (validar(c)) {
+        codigo = c;
+    }
+}
+
+string Codigo::getCodigo() {
+    return codigo;
+}
+
+Codigo::Codigo(string codigo){
+    try{
+        if(validar(codigo)){
+            this->codigo = codigo;
+        } else {
+            throw codigo;
+        }
+    } catch (string codigo) {
+        cout << "Erro: Codigo invalido. Valor entrado: " << codigo << endl;
+    }
+}
+
+void Data::setData(int d, int m, int a) {
+    if (validar(d, m, a)) {
+        DD = d;
+        MM = m;
+        AA = a;
+    }
+}
+
+Data Data::getData(int &d, int &m, int &a) {
+    d = DD;
+    m = MM;
+    a = AA;
+    return *this; // retorna o objeto
+}
+
+Data::Data(int DD, int MM, int AA){
+    try{
+        if(validar(DD, MM, AA)){
+            this->DD = DD;
+            this->MM = MM;
+            this->AA = AA;
+        } else {
+            string aux = to_string(DD) + "-" + to_string(MM) + "-" + to_string(AA);
+            throw aux;
+        }
+    } catch (string aux) {
+        cout << "Erro: Data invalida. Valor entrado: " << aux << endl;
+    }
+}
+
+// 170102785
+void Dinheiro::setValor(double v) {
+    if (validar(v)) {
+        valor = v;
+    }
+}
+
+double Dinheiro::getValor() {
+    return valor;
+}
+
+Dinheiro::Dinheiro(double valor){
+    try {
+        if (validar(valor)){
+            this->valor = valor;
+        }
+        else {
+            throw valor;
+        }
+    } catch (double valor) {
+        cout << "Erro: Dinheiro invalido. Valor entrado: " << valor << endl;
+    }
+}
+
+// 170102785
+void Duracao::setDuracao(int t) {
+    if (validar(t)) {
+        tempo = t;
+    }
+}
+
+int Duracao::getDuracao() {
+    return tempo;
+}
+
+Duracao::Duracao(int tempo){
+    try {
+        if (validar(tempo)){
+            this->tempo = tempo;
+        }
+        else {
+            throw tempo;
+        }
+    }
+    catch (int tempo){
+        cout << "Erro: Duracao invalida. Valor entrado: " << tempo << endl;
+    }
+}
+
+void Horario::setHora(int h) {
+    if (validar(h, MM)) {
+        HH = h;
+    }
+}
+
+void Horario::setMinuto(int m) {
+    if (validar(HH, m)) {
+        MM = m;
+    }
+}
+
+Horario Horario::getHorario(int &h, int &m) {
+    h = HH;
+    m = MM;
+    return *this;
+}
+
+Horario::Horario(int HH, int MM) {
+    try {
+        if (validar(HH, MM)) {
+            this->HH = HH;
+            this->MM = MM;
+        } else {
+            string aux = to_string(HH) + ":" + to_string(MM);
+            throw aux;
+        }
+    } catch (string aux) {
+        cout << "Erro: Horario invalido. Valor entrado: " << aux << endl;
+    }
+}
+void Nome::setNome(char *n) {
+    if (validar(n)) {
+        strncpy(nome, n, 30);
+        nome[29] = '\0';  // Assegura que o nome seja uma string terminada em '\0'
+    }
+}
+
+string Nome::getNome(char *n) {
+    strcpy(n, nome);  // Copia o conteúdo de 'nome' para o ponteiro 'n'
+    return string(n);  // Retorna o nome como string
+}
+
+Nome::Nome(char* nome) {
+    try {
+        if (validar(nome)) {
+            strncpy(this->nome, nome, 30);
+            this->nome[29] = '\0';
+        } else {
+            throw string(nome);
+        }
+    } catch (string aux) {
+        cout << "Erro: Nome invalido. Valor entrado: " << aux << endl;
+    }
+}
+
+void Senha::setSenha(unsigned int s) {
+    if (validar(s)) {
+        senha = s;
+    }
+}
+
+unsigned int Senha::getSenha() {
+    return senha;
+}
+Senha::Senha(unsigned int senha) {
+    try {
+        if (validar(senha)) {
+            this->senha = senha;
+        } else {
+            throw senha;
+        }
+    } catch (unsigned int senha) {
+        cout << "Erro: Senha invalida. Valor entrado: " << senha << endl;
+    }
+}
+
