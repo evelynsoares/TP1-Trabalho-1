@@ -9,7 +9,7 @@ using namespace std;
 
 class TUCodigo {
     private:
-        const  string VALOR_VALIDO =  "Az«301" ;
+        const  string VALOR_VALIDO =  "abc123" ;
         const  string VALOR_INVALIDO = "1234567";
         const  string VALOR_INVALIDO2 = "ab";
         const  string VALOR_INVALIDO3 = "!567)";
@@ -46,8 +46,8 @@ class TUData {
         const  int VALOR_INVALIDO3[3] = {29, 2, 2023};
         Data *data;
         int estado;
-        void setUp();
-        void tearDown();
+
+
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:
@@ -64,8 +64,8 @@ class TUDinheiro {
         const  double VALOR_INVALIDO2 = -55.;
         Dinheiro *dinheiro;
         int estado;
-        void setUp();
-        void tearDown();
+
+
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:
@@ -80,8 +80,8 @@ class TUDuracao {
         const static int VALOR_INVALIDO = 361;
         Duracao *duracao;
         int estado;
-        void setUp();
-        void tearDown();
+
+
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:
@@ -97,8 +97,8 @@ class TUHorario {
         const  int VALOR_INVALIDO[2] = {24, 00};
         Horario *horario;
         int estado;
-        void setUp();
-        void tearDown();
+
+
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:
@@ -113,8 +113,8 @@ class TUNome {
         const  char VALOR_INVALIDO[30] = "12345678901234";
         Nome *nome;
         int estado;
-        void setUp();
-        void tearDown();
+
+
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:
@@ -132,8 +132,8 @@ class TUSenha {
         const static char VALOR_INVALIDO4 = 86258;
         Senha *senha;
         int estado;
-        void setUp();
-        void tearDown();
+
+
         void testarCenarioValorValido();
         void testerCenarioValorInvalido();
     public:

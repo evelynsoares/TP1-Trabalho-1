@@ -13,6 +13,7 @@ void TUCodigo::testarCenarioValorValido(){
     }
     catch(invalid_argument &excecao){
         estado = FALHA;
+        cout<< "argumento invalido";
     }
 }
 
@@ -24,12 +25,7 @@ void TUCodigo::testerCenarioValorInvalido(){
         estado = FALHA;
     }
     catch(invalid_argument &excecao){
-        if(codigo.codigo == VALOR_INVALIDO)
-        estado = FALHA;
-        if(codigo2.codigo == VALOR_INVALIDO2)
-        estado = FALHA;
-        if(codigo3.codigo == VALOR_INVALIDO3)
-        estado = FALHA;
+    cout << "argumento invalido";
     }
 }
 
@@ -42,6 +38,7 @@ int TUCodigo::run(){
 
 void TUAvaliacao::testarCenarioValorValido(){
     try{
+        Avaliacao avaliacao(VALOR_VALIDO);
         avaliacao.nota = VALOR_VALIDO;
         cout << "Cenario de nota valida: " << avaliacao.nota <<endl;
         if(avaliacao.nota != VALOR_VALIDO)
@@ -49,33 +46,59 @@ void TUAvaliacao::testarCenarioValorValido(){
     }
     catch(invalid_argument &excecao){
         estado = FALHA;
+        cout << "argumento invalido";
     }
 }
 
 void TUAvaliacao::testerCenarioValorInvalido(){
     try{
+        Avaliacao avaliacao(VALOR_INVALIDO);
         cout << "Cenario de nota invalida: " << avaliacao.nota <<endl;
-        avaliacao.nota = VALOR_INVALIDO;
-        cout << "Cenario de nota invalida: " << avaliacao.nota <<endl;
-        avaliacao.nota = VALOR_INVALIDO2;
-        cout << "Cenario de nota invalida: " << avaliacao.nota <<endl;
-        avaliacao.nota = VALOR_INVALIDO3;
+        Avaliacao avaliacao2(VALOR_INVALIDO2);
+        cout << "Cenario de nota invalida: " << avaliacao2.nota <<endl;
+        Avaliacao avaliacao3(VALOR_INVALIDO3);
+        cout << "Cenario de nota invalida: " << avaliacao3.nota <<endl;
         estado = FALHA;
     }
     catch(invalid_argument &excecao){
-        if(avaliacao.nota == VALOR_INVALIDO)
-        estado = FALHA;
-        if(avaliacao.nota == VALOR_INVALIDO2)
-        estado = FALHA;
-        if(avaliacao.nota == VALOR_INVALIDO3)
-        estado = FALHA;
+        cout << "argumento invalido";
     }
 }
 
 int TUAvaliacao::run(){
-    setUp();
     testarCenarioValorValido();
     testerCenarioValorInvalido();
-    tearDown();
+    return estado;
+}
+
+
+
+void TUData::testarCenarioValorValido(){
+    try{
+        Data data(VALOR_VALIDO[0], VALOR_VALIDO[1], VALOR_VALIDO[2]);
+        cout << "Cenario de Data valida: " << data.DD << data.MM << data.AA << endl;
+        if(data.DD != VALOR_VALIDO[0] && data.MM != VALOR_VALIDO[1] && data.AA != VALOR_VALIDO[2])
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao){
+        estado = FALHA;
+        cout << "argumento invalido";
+    }
+}
+
+void TUData::testerCenarioValorInvalido(){
+    try{
+        Data data(VALOR_INVALIDO[0], VALOR_INVALIDO[1], VALOR_INVALIDO[2]);
+        cout << "Cenario de data invalida: " << data.DD << data.MM << data.AA <<endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument &excecao){
+        cout << "argumento invalido";
+    }
+}
+
+int TUData::run(){
+    testarCenarioValorValido();
+    testerCenarioValorInvalido();
     return estado;
 }
